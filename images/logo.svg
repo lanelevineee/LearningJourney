@@ -1,35 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
   <defs>
     <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
     </linearGradient>
   </defs>
   
   <!-- Background Circle -->
-  <circle cx="50" cy="50" r="48" fill="url(#logoGradient)"/>
+  <circle cx="100" cy="100" r="95" fill="none" stroke="url(#logoGradient)" stroke-width="3"/>
   
-  <!-- Zen Symbol - Balanced Scales -->
-  <g transform="translate(50, 50)" fill="white">
-    <!-- Top Balance Bar -->
-    <rect x="-25" y="-15" width="50" height="4" rx="2" fill="white"/>
+  <!-- Balance Scale - Symbol of Accounting -->
+  <g transform="translate(100, 100)">
+    <!-- Top Bar -->
+    <rect x="-40" y="-30" width="80" height="4" rx="2" fill="url(#logoGradient)"/>
     
-    <!-- Center Point -->
-    <circle cx="0" cy="-13" r="4" fill="white"/>
-    
-    <!-- Vertical Stand -->
-    <rect x="-3" y="-13" width="6" height="25" rx="2" fill="white"/>
-    
-    <!-- Left Scale -->
-    <path d="M -20 12 L -20 22 A 8 8 0 0 0 -4 22 L -4 12 Z" fill="white" opacity="0.9"/>
-    
-    <!-- Right Scale -->
-    <path d="M 20 12 L 20 22 A 8 8 0 0 0 4 22 L 4 12 Z" fill="white" opacity="0.9"/>
+    <!-- Center Post -->
+    <rect x="-3" y="-30" width="6" height="70" rx="2" fill="url(#logoGradient)"/>
     
     <!-- Base -->
-    <rect x="-12" y="22" width="24" height="4" rx="2" fill="white"/>
+    <ellipse cx="0" cy="40" rx="30" ry="8" fill="url(#logoGradient)" opacity="0.8"/>
+    
+    <!-- Left Pan -->
+    <path d="M -35 -26 L -25 -15 L -35 -5 Z" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+    <ellipse cx="-30" cy="-5" rx="15" ry="5" fill="url(#logoGradient)" opacity="0.3"/>
+    
+    <!-- Right Pan -->
+    <path d="M 35 -26 L 25 -15 L 35 -5 Z" fill="none" stroke="url(#logoGradient)" stroke-width="2"/>
+    <ellipse cx="30" cy="-5" rx="15" ry="5" fill="url(#logoGradient)" opacity="0.3"/>
+    
+    <!-- Connecting Lines Left -->
+    <line x1="-35" y1="-26" x2="-30" y2="-5" stroke="url(#logoGradient)" stroke-width="1.5"/>
+    <line x1="-5" y1="-26" x2="-30" y2="-5" stroke="url(#logoGradient)" stroke-width="1.5"/>
+    
+    <!-- Connecting Lines Right -->
+    <line x1="35" y1="-26" x2="30" y2="-5" stroke="url(#logoGradient)" stroke-width="1.5"/>
+    <line x1="5" y1="-26" x2="30" y2="-5" stroke="url(#logoGradient)" stroke-width="1.5"/>
   </g>
   
   <!-- Decorative Elements -->
-  <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  <circle cx="100" cy="100" r="3" fill="url(#logoGradient)"/>
 </svg>
