@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Zen Accounting and Tax Consultancy</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+            padding: 10rem 0 6rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+        }
+        
+        .page-header h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+        }
+        
+        .breadcrumb a { color: rgba(255, 255, 255, 0.8); }
+        .breadcrumb a:hover { color: white; }
+        .breadcrumb span { color: rgba(255, 255, 255, 0.5); }
+        
+        .service-detail-section {
+            padding: 5rem 0;
+        }
+        
+        .service-detail-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+        
+        .service-detail-header {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            padding: 3rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .service-detail-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .service-detail-icon i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .service-detail-body {
+            padding: 3rem;
+        }
+        
+        .service-detail-body h3 {
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .service-list-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+        
+        .service-list-item i {
+            color: #10b981;
+            font-size: 1.25rem;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-item {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+        
+        .benefit-item i {
+            font-size: 2rem;
+            color: #3b82f6;
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-item h4 {
+            color: #1e293b;
+            font-size: 1rem;
+        }
+        
+        .cta-banner {
+            background: linear-gradient(135deg, #10b981, #059669);
+            padding: 4rem 3rem;
+            border-radius: 1.5rem;
+            text-align: center;
+            color: white;
+            margin-top: 3rem;
+        }
+        
+        .cta-banner h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-banner p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo.svg" alt="Zen Accounting Logo" class="logo-img">
+                <span class="logo-text">Zen Accounting</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link active">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="gsap-fade-up">Our Services</h1>
+            <div class="breadcrumb gsap-fade-up">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Services</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section class="services section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center gsap-fade-up">
+                <span class="section-badge">What We Offer</span>
+                <h2 class="section-title">Comprehensive Financial Solutions</h2>
+                <p class="section-description">
+                    From bookkeeping to tax filing, we offer end-to-end accounting services designed to 
+                    support your business at every stage.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card gsap-fade-up" data-delay="0.1">
+                    <div class="service-icon"><i class="ri-file-list-3-line"></i></div>
+                    <h3>Non-Audited Financial Statements</h3>
+                    <p>Professional financial statements for businesses that don't require statutory audits.</p>
+                    <a href="#non-audited" class="service-link">Learn More <i class="ri-arrow-right-line"></i></a>
+                </div>
+                <div class="service-card featured gsap-fade-up" data-delay="0.2">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="service-icon"><i class="ri-search-eye-line"></i></div>
+                    <h3>Audited Financial Statements</h3>
+                    <p>Prepare financial statements ready for independent audit examination.</p>
+                    <a href="#audited" class="service-link">Learn More <i class="ri-arrow-right-line"></i></a>
+                </div>
+                <div class="service-card gsap-fade-up" data-delay="0.3">
+                    <div class="service-icon"><i class="ri-book-open-line"></i></div>
+                    <h3>Bookkeeping Services</h3>
+                    <p>Maintain accurate and organized financial records efficiently.</p>
+                    <a href="#bookkeeping" class="service-link">Learn More <i class="ri-arrow-right-line"></i></a>
+                </div>
+                <div class="service-card gsap-fade-up" data-delay="0.4">
+                    <div class="service-icon"><i class="ri-calculator-line"></i></div>
+                    <h3>Tax Preparation & Filing</h3>
+                    <p>Accurate and timely tax return preparation ensuring compliance.</p>
+                    <a href="#tax" class="service-link">Learn More <i class="ri-arrow-right-line"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details -->
+    <section class="service-detail-section">
+        <div class="container">
+            <!-- Non-Audited Financial Statements -->
+            <div id="non-audited" class="service-detail-card gsap-fade-up">
+                <div class="service-detail-header">
+                    <div class="service-detail-icon"><i class="ri-file-list-3-line"></i></div>
+                    <div>
+                        <h2>Non-Audited Financial Statement Preparation</h2>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0;">Professional financial reports for internal management and decision-making</p>
+                    </div>
+                </div>
+                <div class="service-detail-body">
+                    <p>We prepare professional financial statements for businesses that do not require statutory audits. These reports help business owners understand their financial performance and position for decision-making, loan applications, and internal management purposes.</p>
+                    
+                    <h3>What's Included:</h3>
+                    <div class="service-list">
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Income Statement</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Profit and loss analysis showing revenue, expenses, and net income</p>
+                            </div>
+                        </div>
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Statement of Financial Position</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Balance sheet detailing assets, liabilities, and equity</p>
+                            </div>
+                        </div>
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Cash Flow Statement</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Analysis of cash inflows and outflows from operations, investing, and financing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audited Financial Statements -->
+            <div id="audited" class="service-detail-card gsap-fade-up">
+                <div class="service-detail-header">
+                    <div class="service-detail-icon"><i class="ri-search-eye-line"></i></div>
+                    <div>
+                        <h2>Audited Financial Statement Preparation</h2>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0;">Financial statements ready for independent audit examination</p>
+                    </div>
+                </div>
+                <div class="service-detail-body">
+                    <p>We assist businesses in preparing financial statements that are ready for independent audit examination in accordance with accounting standards and regulatory requirements.</p>
+                    
+                    <h3>Key Benefits:</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="ri-shield-check-line"></i>
+                            <h4>Improved Credibility</h4>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="ri-file-shield-2-line"></i>
+                            <h4>Regulatory Compliance</h4>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="ri-increase-decrease-line"></i>
+                            <h4>Investor Confidence</h4>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="ri-database-2-line"></i>
+                            <h4>Accurate Reporting</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bookkeeping Services -->
+            <div id="bookkeeping" class="service-detail-card gsap-fade-up">
+                <div class="service-detail-header">
+                    <div class="service-detail-icon"><i class="ri-book-open-line"></i></div>
+                    <div>
+                        <h2>Bookkeeping Services</h2>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0;">Accurate and organized financial record management</p>
+                    </div>
+                </div>
+                <div class="service-detail-body">
+                    <p>We help businesses maintain accurate and organized financial records by recording daily financial transactions and managing accounting records efficiently.</p>
+                    
+                    <h3>Our Bookkeeping Includes:</h3>
+                    <div class="service-list">
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Sales and Purchase Recording</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Complete documentation of all business transactions</p>
+                            </div>
+                        </div>
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Expense Tracking</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Categorization and monitoring of all business expenses</p>
+                            </div>
+                        </div>
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Bank Reconciliation</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Monthly reconciliation of bank statements with books</p>
+                            </div>
+                        </div>
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Payroll Support</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Employee payment processing and record keeping</p>
+                            </div>
+                        </div>
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Financial Record Management</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Organized storage and retrieval of financial documents</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tax Preparation -->
+            <div id="tax" class="service-detail-card gsap-fade-up">
+                <div class="service-detail-header">
+                    <div class="service-detail-icon"><i class="ri-calculator-line"></i></div>
+                    <div>
+                        <h2>Tax Preparation and Filing</h2>
+                        <p style="color: rgba(255,255,255,0.9); margin: 0;">Accurate tax returns filed on time, every time</p>
+                    </div>
+                </div>
+                <div class="service-detail-body">
+                    <p>We assist individuals and businesses in preparing and filing tax returns accurately and on time while ensuring compliance with tax laws and regulations.</p>
+                    
+                    <h3>Tax Services Include:</h3>
+                    <div class="service-list">
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>VAT Returns</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Preparation and filing of Value Added Tax returns</p>
+                            </div>
+                        </div>
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Income Tax Returns</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Corporate and individual income tax preparation</p>
+                            </div>
+                        </div>
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>PAYE Filing</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Pay As You Earn tax withholding and remittance</p>
+                            </div>
+                        </div>
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Tax Calculations</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Accurate computation of tax liabilities and refunds</p>
+                            </div>
+                        </div>
+                        <div class="service-list-item">
+                            <i class="ri-check-line"></i>
+                            <div>
+                                <strong>Tax Compliance Support</strong>
+                                <p style="margin: 0; font-size: 0.875rem;">Ongoing guidance to maintain tax compliance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Banner -->
+            <div class="cta-banner gsap-fade-up">
+                <h2>Need a Custom Solution?</h2>
+                <p>Every business is unique. Let's discuss how we can tailor our services to meet your specific needs.</p>
+                <a href="contact.html" class="btn btn-white btn-lg">
+                    <i class="ri-calendar-line"></i>
+                    Schedule a Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="../index.html" class="logo">
+                        <img src="../images/logo.svg" alt="Zen Accounting Logo" class="logo-img">
+                        <span class="logo-text">Zen Accounting</span>
+                    </a>
+                    <p>Your trusted partner for professional accounting, bookkeeping, and tax services.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#non-audited">Financial Statements</a></li>
+                        <li><a href="#audited">Audited Reports</a></li>
+                        <li><a href="#bookkeeping">Bookkeeping</a></li>
+                        <li><a href="#tax">Tax Preparation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="ri-map-pin-line"></i>
+                            <span>123 Business Avenue, Suite 456<br>New York, NY 10001</span>
+                        </li>
+                        <li>
+                            <i class="ri-phone-line"></i>
+                            <span>+1 (234) 567-890</span>
+                        </li>
+                        <li>
+                            <i class="ri-mail-line"></i>
+                            <span>info@zenaccounting.com</span>
+                        </li>
+                        <li>
+                            <i class="ri-time-line"></i>
+                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zen Accounting and Tax Consultancy. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

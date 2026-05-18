@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Zen Accounting and Tax Consultancy</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+            padding: 10rem 0 6rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+        }
+        
+        .page-header h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+        }
+        
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .breadcrumb a:hover {
+            color: white;
+        }
+        
+        .breadcrumb span {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        .values-section {
+            padding: 5rem 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .value-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 1rem;
+            color: #1e293b;
+        }
+        
+        .team-section {
+            padding: 5rem 0;
+            background: #f8fafc;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .team-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .team-info {
+            padding: 1.5rem;
+        }
+        
+        .team-info h3 {
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+        
+        .team-role {
+            color: #3b82f6;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .social-links-small {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .social-links-small a {
+            width: 35px;
+            height: 35px;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links-small a:hover {
+            background: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo.svg" alt="Zen Accounting Logo" class="logo-img">
+                <span class="logo-text">Zen Accounting</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="gsap-fade-up">About Us</h1>
+            <div class="breadcrumb gsap-fade-up">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content gsap-fade-right">
+                    <span class="section-badge">Our Story</span>
+                    <h2 class="section-title">Welcome to Zen Accounting and Tax Consultancy</h2>
+                    <p>
+                        Your trusted partner for professional accounting, bookkeeping, and tax services. We are committed 
+                        to helping businesses and individuals maintain accurate financial records, stay compliant with tax 
+                        regulations, and make informed financial decisions.
+                    </p>
+                    <p>
+                        Our goal is to simplify accounting and taxation for our clients by providing reliable, timely, and 
+                        professional financial support tailored to their needs. With years of experience and a dedicated team 
+                        of professionals, we've helped hundreds of businesses achieve financial clarity and sustainable growth.
+                    </p>
+                    <div style="margin-top: 2rem;">
+                        <a href="contact.html" class="btn btn-primary">
+                            Work With Us
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image gsap-fade-left">
+                    <div class="image-stack">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=500&h=600&fit=crop" alt="Our team" class="stack-img-1">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=500&fit=crop" alt="Office meeting" class="stack-img-2">
+                        <div class="experience-badge">
+                            <span class="exp-number">15+</span>
+                            <span class="exp-text">Years of Excellence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center section-header gsap-fade-up">
+                <span class="section-badge">What Drives Us</span>
+                <h2 class="section-title">Mission & Vision</h2>
+            </div>
+            <div class="about-cards" style="max-width: 900px; margin: 0 auto;">
+                <div class="about-card gsap-fade-up">
+                    <i class="ri-target-line"></i>
+                    <h4>Our Mission</h4>
+                    <p>To provide reliable, accurate, and professional accounting and tax solutions that help businesses maintain financial clarity, meet regulatory obligations, and achieve sustainable growth through exceptional service and integrity.</p>
+                </div>
+                <div class="about-card gsap-fade-up">
+                    <i class="ri-eye-line"></i>
+                    <h4>Our Vision</h4>
+                    <p>To become a leading and trusted accounting and tax consultancy recognized for excellence, professionalism, and empowering businesses with sound financial management solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="text-center section-header gsap-fade-up">
+                <span class="section-badge">Our Foundation</span>
+                <h2 class="section-title">Core Values</h2>
+                <p class="section-description">
+                    These principles guide everything we do and define how we serve our clients.
+                </p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card gsap-fade-up" data-delay="0.1">
+                    <div class="value-icon">
+                        <i class="ri-shield-check-line"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We uphold the highest ethical standards in all our dealings, ensuring transparency and honesty.</p>
+                </div>
+                <div class="value-card gsap-fade-up" data-delay="0.2">
+                    <div class="value-icon">
+                        <i class="ri-award-line"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We strive for excellence in every task, delivering quality service that exceeds expectations.</p>
+                </div>
+                <div class="value-card gsap-fade-up" data-delay="0.3">
+                    <div class="value-icon">
+                        <i class="ri-user-heart-line"></i>
+                    </div>
+                    <h3>Client-Focused</h3>
+                    <p>Your success is our success. We tailor our services to meet your unique business needs.</p>
+                </div>
+                <div class="value-card gsap-fade-up" data-delay="0.4">
+                    <div class="value-icon">
+                        <i class="ri-team-line"></i>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>We work as partners with our clients, fostering long-term relationships built on trust.</p>
+                </div>
+                <div class="value-card gsap-fade-up" data-delay="0.5">
+                    <div class="value-icon">
+                        <i class="ri-lightbulb-line"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We embrace technology and new methodologies to provide cutting-edge solutions.</p>
+                </div>
+                <div class="value-card gsap-fade-up" data-delay="0.6">
+                    <div class="value-icon">
+                        <i class="ri-time-line"></i>
+                    </div>
+                    <h3>Reliability</h3>
+                    <p>We deliver on our promises with timely service and consistent communication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose section-padding">
+        <div class="container">
+            <div class="why-choose-grid">
+                <div class="why-content gsap-fade-right">
+                    <span class="section-badge">Why Choose Us</span>
+                    <h2 class="section-title">The Zen Advantage</h2>
+                    <p class="section-description">
+                        We combine expertise, technology, and personalized service to deliver exceptional results for every client.
+                    </p>
+                    <div class="features-grid">
+                        <div class="feature-item gsap-fade-up" data-delay="0.1">
+                            <i class="ri-user-star-line"></i>
+                            <div>
+                                <h4>Professional & Reliable</h4>
+                                <p>Consistent, high-quality service you can depend on</p>
+                            </div>
+                        </div>
+                        <div class="feature-item gsap-fade-up" data-delay="0.2">
+                            <i class="ri-checkbox-circle-line"></i>
+                            <div>
+                                <h4>Accurate Reporting</h4>
+                                <p>Precision in every financial statement and report</p>
+                            </div>
+                        </div>
+                        <div class="feature-item gsap-fade-up" data-delay="0.3">
+                            <i class="ri-time-line"></i>
+                            <div>
+                                <h4>Timely Support</h4>
+                                <p>Never miss a deadline with our proactive approach</p>
+                            </div>
+                        </div>
+                        <div class="feature-item gsap-fade-up" data-delay="0.4">
+                            <i class="ri-lock-line"></i>
+                            <div>
+                                <h4>Confidential & Secure</h4>
+                                <p>Your financial data is protected with utmost care</p>
+                            </div>
+                        </div>
+                        <div class="feature-item gsap-fade-up" data-delay="0.5">
+                            <i class="ri-customer-service-2-line"></i>
+                            <div>
+                                <h4>Client-Focused</h4>
+                                <p>Solutions tailored to your unique business needs</p>
+                            </div>
+                        </div>
+                        <div class="feature-item gsap-fade-up" data-delay="0.6">
+                            <i class="ri-wallet-3-line"></i>
+                            <div>
+                                <h4>Affordable Pricing</h4>
+                                <p>Efficient services at competitive rates</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-image gsap-fade-left">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=700&fit=crop" alt="Professional consultation" class="why-img">
+                    <div class="overlay-card">
+                        <div class="overlay-icon">
+                            <i class="ri-medal-line"></i>
+                        </div>
+                        <div>
+                            <span class="overlay-title">Trusted Excellence</span>
+                            <span class="overlay-subtitle">Industry Leading Standards</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section-padding">
+        <div class="container">
+            <div class="cta-box gsap-fade-up">
+                <div class="cta-content">
+                    <h2>Ready to Partner With Us?</h2>
+                    <p>Let's discuss how Zen Accounting can help your business achieve financial success.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-white btn-lg">
+                            <i class="ri-calendar-line"></i>
+                            Schedule Consultation
+                        </a>
+                        <a href="tel:+1234567890" class="btn btn-outline-white btn-lg">
+                            <i class="ri-phone-line"></i>
+                            Call Us Now
+                        </a>
+                    </div>
+                </div>
+                <div class="cta-decoration">
+                    <i class="ri-bar-chart-grouped-line"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="../index.html" class="logo">
+                        <img src="../images/logo.svg" alt="Zen Accounting Logo" class="logo-img">
+                        <span class="logo-text">Zen Accounting</span>
+                    </a>
+                    <p>Your trusted partner for professional accounting, bookkeeping, and tax services. Helping businesses achieve financial clarity and sustainable growth.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Financial Statements</a></li>
+                        <li><a href="services.html">Audited Reports</a></li>
+                        <li><a href="services.html">Bookkeeping</a></li>
+                        <li><a href="services.html">Tax Preparation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="ri-map-pin-line"></i>
+                            <span>123 Business Avenue, Suite 456<br>New York, NY 10001</span>
+                        </li>
+                        <li>
+                            <i class="ri-phone-line"></i>
+                            <span>+1 (234) 567-890</span>
+                        </li>
+                        <li>
+                            <i class="ri-mail-line"></i>
+                            <span>info@zenaccounting.com</span>
+                        </li>
+                        <li>
+                            <i class="ri-time-line"></i>
+                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zen Accounting and Tax Consultancy. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>

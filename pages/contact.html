@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Zen Accounting and Tax Consultancy</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%);
+            padding: 10rem 0 6rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.2) 0%, transparent 50%);
+        }
+        
+        .page-header h1 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+        }
+        
+        .breadcrumb a { color: rgba(255, 255, 255, 0.8); }
+        .breadcrumb a:hover { color: white; }
+        .breadcrumb span { color: rgba(255, 255, 255, 0.5); }
+        
+        .contact-section {
+            padding: 5rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+        }
+        
+        .contact-info-card {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            padding: 3rem;
+            border-radius: 1.5rem;
+            color: white;
+            height: 100%;
+        }
+        
+        .contact-info-card h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: #60a5fa;
+            margin-top: 0.25rem;
+        }
+        
+        .contact-item-text strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+        
+        .contact-item-text p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 0.9375rem;
+        }
+        
+        .working-hours {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .working-hours h4 {
+            color: white;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .hours-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9375rem;
+        }
+        
+        .hours-item:last-child {
+            border-bottom: none;
+        }
+        
+        .hours-item span:first-child {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .hours-item span:last-child {
+            font-weight: 600;
+        }
+        
+        .social-connect {
+            margin-top: 2rem;
+        }
+        
+        .social-connect h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .social-links-large {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links-large a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links-large a:hover {
+            background: white;
+            color: #1e40af;
+            transform: translateY(-3px);
+        }
+        
+        .contact-form-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #1e293b;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 0.75rem;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
+        
+        .map-section {
+            padding: 0 0 5rem;
+        }
+        
+        .map-container {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 1rem;
+            color: #64748b;
+        }
+        
+        .map-placeholder i {
+            font-size: 4rem;
+            color: #3b82f6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo.svg" alt="Zen Accounting Logo" class="logo-img">
+                <span class="logo-text">Zen Accounting</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">Get Started</a>
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <i class="ri-menu-line"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="gsap-fade-up">Contact Us</h1>
+            <div class="breadcrumb gsap-fade-up">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Contact</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info-card gsap-fade-right">
+                    <h3>Get In Touch</h3>
+                    <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                        Ready to simplify your finances? Reach out to us for a free consultation.
+                    </p>
+                    
+                    <div class="contact-item">
+                        <i class="ri-map-pin-line"></i>
+                        <div class="contact-item-text">
+                            <strong>Our Office</strong>
+                            <p>123 Business Avenue, Suite 456<br>New York, NY 10001</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="ri-phone-line"></i>
+                        <div class="contact-item-text">
+                            <strong>Phone</strong>
+                            <p>+1 (234) 567-890</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="ri-mail-line"></i>
+                        <div class="contact-item-text">
+                            <strong>Email</strong>
+                            <p>info@zenaccounting.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="ri-time-line"></i>
+                        <div class="contact-item-text">
+                            <strong>Working Hours</strong>
+                            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="working-hours">
+                        <h4><i class="ri-calendar-line"></i> Weekly Schedule</h4>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span>Monday - Friday</span>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Saturday</span>
+                                <span>10:00 AM - 2:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect">
+                        <h4>Connect With Us</h4>
+                        <div class="social-links-large">
+                            <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+                            <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form-card gsap-fade-left">
+                    <h3 style="margin-bottom: 0.5rem; color: #1e293b;">Send Us a Message</h3>
+                    <p style="color: #64748b; margin-bottom: 2rem;">Fill out the form below and we'll get back to you within 24 hours.</p>
+                    
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+1 (234) 567-890">
+                            </div>
+                            <div class="form-group">
+                                <label for="service">Service Interested In</label>
+                                <select id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="non-audited">Non-Audited Financial Statements</option>
+                                    <option value="audited">Audited Financial Statements</option>
+                                    <option value="bookkeeping">Bookkeeping Services</option>
+                                    <option value="tax">Tax Preparation & Filing</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="How can we help you?">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your needs..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="ri-send-plane-fill"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="map-container gsap-fade-up">
+                <div class="map-placeholder">
+                    <i class="ri-map-pin-2-line"></i>
+                    <div style="text-align: center;">
+                        <strong style="font-size: 1.25rem; color: #1e293b;">Visit Our Office</strong>
+                        <p>123 Business Avenue, Suite 456, New York, NY 10001</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center gsap-fade-up">
+                <span class="section-badge">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description">
+                    Quick answers to common questions about getting started with Zen Accounting.
+                </p>
+            </div>
+            <div class="faq-container gsap-fade-up">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I get started with your services?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Simply contact us through this form, call us, or email us to schedule a free consultation. During the consultation, we'll discuss your needs and create a customized service plan for your business.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer virtual consultations?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer flexible consultation options including in-person meetings at our office, video calls, and phone consultations to accommodate your schedule and preferences.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What information should I prepare for our first meeting?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For your first meeting, please bring any existing financial statements, tax returns from the previous year, bank statements, and a list of your specific accounting needs or concerns. Don't worry if you don't have everything organized—we're here to help!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How quickly can you start working with my business?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We can typically begin working with new clients within 1-2 weeks after our initial consultation. For urgent needs, we may be able to accommodate faster start times depending on our current capacity.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is my financial information secure?</span>
+                        <i class="ri-add-line"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. We use industry-leading security measures to protect your financial data, including encrypted file transfers, secure cloud storage, and strict confidentiality agreements. Your privacy and security are our top priorities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section-padding">
+        <div class="container">
+            <div class="cta-box gsap-fade-up">
+                <div class="cta-content">
+                    <h2>Ready to Get Started?</h2>
+                    <p>Schedule your free consultation today and take the first step toward financial clarity.</p>
+                    <div class="cta-buttons">
+                        <a href="tel:+1234567890" class="btn btn-white btn-lg">
+                            <i class="ri-phone-line"></i>
+                            Call Us Now
+                        </a>
+                        <a href="mailto:info@zenaccounting.com" class="btn btn-outline-white btn-lg">
+                            <i class="ri-mail-line"></i>
+                            Email Us
+                        </a>
+                    </div>
+                </div>
+                <div class="cta-decoration">
+                    <i class="ri-customer-service-2-line"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="../index.html" class="logo">
+                        <img src="../images/logo.svg" alt="Zen Accounting Logo" class="logo-img">
+                        <span class="logo-text">Zen Accounting</span>
+                    </a>
+                    <p>Your trusted partner for professional accounting, bookkeeping, and tax services.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-box-fill"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="ri-instagram-fill"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html#non-audited">Financial Statements</a></li>
+                        <li><a href="services.html#audited">Audited Reports</a></li>
+                        <li><a href="services.html#bookkeeping">Bookkeeping</a></li>
+                        <li><a href="services.html#tax">Tax Preparation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="ri-map-pin-line"></i>
+                            <span>123 Business Avenue, Suite 456<br>New York, NY 10001</span>
+                        </li>
+                        <li>
+                            <i class="ri-phone-line"></i>
+                            <span>+1 (234) 567-890</span>
+                        </li>
+                        <li>
+                            <i class="ri-mail-line"></i>
+                            <span>info@zenaccounting.com</span>
+                        </li>
+                        <li>
+                            <i class="ri-time-line"></i>
+                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zen Accounting and Tax Consultancy. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+</html>
