@@ -4,7 +4,7 @@
 
 /* CSS Variables */
 :root {
-    /* Colors */
+    /* Colors - Light Theme Default */
     --color-primary: #2563eb;
     --color-primary-dark: #1d4ed8;
     --color-primary-light: #3b82f6;
@@ -17,6 +17,27 @@
     --color-gray-light: #94a3b8;
     --color-light: #f1f5f9;
     --color-white: #ffffff;
+    
+    /* Backgrounds */
+    --bg-body: var(--color-white);
+    --bg-card: var(--color-white);
+    --bg-nav: rgba(255, 255, 255, 0.9);
+    --bg-section: var(--color-light);
+    
+    /* Text */
+    --text-body: var(--color-dark);
+    --text-muted: var(--color-gray);
+    
+    /* Borders */
+    --border-color: #e2e8f0;
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.3);
+    
+    /* Cursor */
+    --cursor-bg: var(--color-primary);
+    --cursor-blend: normal;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%);
@@ -42,13 +63,6 @@
     --radius-xl: 2rem;
     --radius-full: 9999px;
     
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    --shadow-glow: 0 0 40px rgba(37, 99, 235, 0.3);
-    
     /* Transitions */
     --transition-fast: 0.2s ease;
     --transition-base: 0.3s ease;
@@ -57,6 +71,27 @@
     /* Layout */
     --container-max: 1400px;
     --header-height: 80px;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --bg-body: var(--color-dark);
+    --bg-card: var(--color-dark-light);
+    --bg-nav: rgba(15, 23, 42, 0.9);
+    --bg-section: #0b1120;
+    
+    --text-body: var(--color-white);
+    --text-muted: var(--color-gray-light);
+    
+    --border-color: #1e293b;
+    
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.4);
+    
+    --cursor-bg: var(--color-primary-light);
+    --cursor-blend: difference;
+    
+    --gradient-glow: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
 }
 
 /* Reset & Base */
@@ -73,12 +108,13 @@ html {
 
 body {
     font-family: var(--font-primary);
-    color: var(--color-dark);
-    background-color: var(--color-white);
+    color: var(--text-body);
+    background-color: var(--bg-body);
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 img {
@@ -127,13 +163,13 @@ button {
 .cursor-dot {
     width: 8px;
     height: 8px;
-    background: var(--color-primary);
+    background: var(--cursor-bg);
 }
 
 .cursor-outline {
     width: 40px;
     height: 40px;
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--cursor-bg);
     transition: width 0.2s, height 0.2s, background-color 0.2s;
 }
 
@@ -204,16 +240,16 @@ button {
     left: 0;
     width: 100%;
     height: var(--header-height);
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--bg-nav);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
     z-index: 1000;
     transition: var(--transition-base);
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: var(--shadow-md);
+    background: var(--bg-nav);
+    box-shadow: var(--shadow-card);
 }
 
 .nav-container {
@@ -230,7 +266,7 @@ button {
     font-family: var(--font-display);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--color-dark);
+    color: var(--text-body);
 }
 
 .logo img {
@@ -256,7 +292,7 @@ button {
 
 .nav-link {
     font-weight: 500;
-    color: var(--color-gray);
+    color: var(--text-muted);
     position: relative;
     padding: var(--spacing-xs) 0;
 }
@@ -288,6 +324,28 @@ button {
     gap: var(--spacing-md);
 }
 
+/* Theme Toggle Button */
+.theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg-section);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-body);
+    font-size: 1.25rem;
+    transition: var(--transition-base);
+}
+
+.theme-toggle:hover {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+    transform: rotate(15deg);
+}
+
 .mobile-toggle {
     display: none;
     flex-direction: column;
@@ -298,7 +356,7 @@ button {
 .mobile-toggle span {
     width: 25px;
     height: 2px;
-    background: var(--color-dark);
+    background: var(--text-body);
     transition: var(--transition-base);
 }
 
@@ -308,7 +366,7 @@ button {
         top: var(--header-height);
         left: 0;
         width: 100%;
-        background: var(--color-white);
+        background: var(--bg-card);
         flex-direction: column;
         padding: var(--spacing-xl);
         gap: var(--spacing-lg);
@@ -346,35 +404,39 @@ button {
 .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-xs);
-    padding: var(--spacing-sm) var(--spacing-lg);
+    padding: 0.875rem 2rem;
     font-weight: 600;
+    font-size: 0.95rem;
     border-radius: var(--radius-full);
     transition: var(--transition-base);
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .btn-primary {
     background: var(--gradient-primary);
     color: var(--color-white);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg), var(--shadow-glow);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4), var(--shadow-glow);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--color-dark);
-    border: 2px solid var(--color-gray-light);
+    color: var(--text-body);
+    border: 2px solid var(--border-color);
 }
 
 .btn-outline:hover {
     border-color: var(--color-primary);
     color: var(--color-primary);
+    background: rgba(37, 99, 235, 0.05);
 }
 
 .btn-outline-light {
@@ -389,8 +451,8 @@ button {
 }
 
 .btn-lg {
-    padding: var(--spacing-md) var(--spacing-xl);
-    font-size: 1.1rem;
+    padding: 1.125rem 2.5rem;
+    font-size: 1.05rem;
 }
 
 /* Hero Section */

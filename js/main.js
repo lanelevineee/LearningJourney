@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Preloader.init();
     CustomCursor.init();
     Navigation.init();
+    ThemeSwitcher.init();
     GSAPAnimations.init();
     FAQ.init();
     TestimonialSlider.init();
@@ -164,6 +165,41 @@ const Navigation = {
                 link.classList.remove('active');
             }
         });
+    }
+};
+
+/**
+ * Theme Switcher Module
+ * Handles dark/light theme toggling with localStorage persistence
+ */
+const ThemeSwitcher = {
+    init() {
+        this.toggleBtn = document.querySelector('.theme-toggle');
+        this.icon = this.toggleBtn?.querySelector('i');
+        
+        // Check for saved theme preference or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        this.setTheme(savedTheme);
+        
+        if (this.toggleBtn) {
+            this.toggleBtn.addEventListener('click', () => this.toggleTheme());
+        }
+    },
+    
+    toggleTheme() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        this.setTheme(newTheme);
+    },
+    
+    setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+        
+        // Update icon
+        if (this.icon) {
+            this.icon.className = theme === 'dark' ? 'ri-sun-line' : 'ri-moon-line';
+        }
     }
 };
 
