@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -21,13 +21,16 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Interactive Canvas Background -->
+    <canvas id="bg-canvas"></canvas>
+
     <!-- Preloader -->
     <div class="preloader">
         <div class="preloader-content">
             <div class="logo-loader">
                 <i class="ri-balance-line"></i>
             </div>
-            <div class="loader-text">ZEN</div>
+            <div class="loader-text">ZEN ACCOUNTING</div>
             <div class="progress-bar">
                 <div class="progress-fill"></div>
             </div>
@@ -48,26 +51,24 @@
                     <span>ZEN</span>
                 </div>
             </a>
-            
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="pages/about.html" class="nav-link">About</a></li>
-                <li><a href="pages/services.html" class="nav-link">Services</a></li>
-                <li><a href="pages/contact.html" class="nav-link">Contact</a></li>
-            </ul>
-            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="pages/about.html" class="nav-link">About</a>
+                <a href="pages/services.html" class="nav-link">Services</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+            </div>
             <div class="nav-actions">
                 <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="ri-sun-line"></i>
                     <i class="ri-moon-line"></i>
                 </button>
-                <a href="pages/contact.html" class="btn btn-primary">
-                    <span>Get Started</span>
-                    <i class="ri-arrow-right-line"></i>
-                </a>
-                <button class="mobile-toggle" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="ai-assistant-btn" aria-label="Open AI Assistant">
+                    <i class="ri-sparkling-line"></i>
+                    <span>Ask Zen AI</span>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <i class="ri-menu-4-line"></i>
+                    <i class="ri-close-line"></i>
                 </button>
             </div>
         </div>
@@ -99,11 +100,11 @@
                 </p>
                 
                 <div class="hero-cta gs-reveal">
-                    <a href="pages/contact.html" class="btn btn-primary btn-lg">
+                    <a href="pages/contact.html" class="btn btn-primary btn-lg magnetic-btn">
                         <span>Consult Now</span>
                         <i class="ri-arrow-right-line"></i>
                     </a>
-                    <a href="#services" class="btn btn-outline btn-lg">
+                    <a href="#services" class="btn btn-outline btn-lg magnetic-btn">
                         <span>Our Services</span>
                         <i class="ri-arrow-down-line"></i>
                     </a>
@@ -531,6 +532,519 @@
             </div>
         </div>
     </section>
+
+    <!-- Financial Health Scanner (Gamification) -->
+    <section class="health-scanner">
+        <div class="container">
+            <div class="scanner-header gs-reveal">
+                <div class="section-badge">
+                    <i class="ri-heart-pulse-line"></i>
+                    <span>Interactive Tool</span>
+                </div>
+                <h2 class="section-title">
+                    Check Your <span class="gradient-text">Financial Health</span>
+                </h2>
+                <p class="section-description">
+                    Answer a few questions to get instant insights into your business financial health score
+                </p>
+            </div>
+            
+            <div class="scanner-container gs-reveal-up">
+                <div class="scanner-progress">
+                    <div class="progress-track">
+                        <div class="progress-fill" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">Question 1 of 5</span>
+                </div>
+                
+                <div class="scanner-questions">
+                    <div class="question active" data-step="1">
+                        <h3>How often do you reconcile your bank accounts?</h3>
+                        <div class="options">
+                            <button class="option-btn" data-score="10">
+                                <i class="ri-check-double-line"></i>
+                                <span>Daily</span>
+                            </button>
+                            <button class="option-btn" data-score="7">
+                                <i class="ri-calendar-check-line"></i>
+                                <span>Weekly</span>
+                            </button>
+                            <button class="option-btn" data-score="4">
+                                <i class="ri-calendar-line"></i>
+                                <span>Monthly</span>
+                            </button>
+                            <button class="option-btn" data-score="1">
+                                <i class="ri-time-line"></i>
+                                <span>Rarely/Never</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-step="2">
+                        <h3>Do you have up-to-date financial statements?</h3>
+                        <div class="options">
+                            <button class="option-btn" data-score="10">
+                                <i class="ri-file-chart-line"></i>
+                                <span>Yes, updated monthly</span>
+                            </button>
+                            <button class="option-btn" data-score="6">
+                                <i class="ri-file-list-line"></i>
+                                <span>Updated quarterly</span>
+                            </button>
+                            <button class="option-btn" data-score="3">
+                                <i class="ri-file-warning-line"></i>
+                                <span>Only for tax season</span>
+                            </button>
+                            <button class="option-btn" data-score="0">
+                                <i class="ri-close-circle-line"></i>
+                                <span>No financial statements</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-step="3">
+                        <h3>How confident are you about your tax compliance?</h3>
+                        <div class="options">
+                            <button class="option-btn" data-score="10">
+                                <i class="ri-shield-check-line"></i>
+                                <span>Very confident - always on time</span>
+                            </button>
+                            <button class="option-btn" data-score="6">
+                                <i class="ri-thumb-up-line"></i>
+                                <span>Moderately confident</span>
+                            </button>
+                            <button class="option-btn" data-score="3">
+                                <i class="ri-question-line"></i>
+                                <span>Not sure</span>
+                            </button>
+                            <button class="option-btn" data-score="0">
+                                <i class="ri-alert-line"></i>
+                                <span>Often late or worried</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-step="4">
+                        <h3>Do you track business expenses regularly?</h3>
+                        <div class="options">
+                            <button class="option-btn" data-score="10">
+                                <i class="ri-receipt-line"></i>
+                                <span>Every transaction tracked</span>
+                            </button>
+                            <button class="option-btn" data-score="7">
+                                <i class="ri-folder-open-line"></i>
+                                <span>Most expenses tracked</span>
+                            </button>
+                            <button class="option-btn" data-score="4">
+                                <i class="ri-stack-line"></i>
+                                <span>Only major expenses</span>
+                            </button>
+                            <button class="option-btn" data-score="1">
+                                <i class="ri-error-warning-line"></i>
+                                <span>Poor tracking</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="question" data-step="5">
+                        <h3>Do you have a budget or financial forecast?</h3>
+                        <div class="options">
+                            <button class="option-btn" data-score="10">
+                                <i class="ri-pie-chart-line"></i>
+                                <span>Yes, detailed & updated</span>
+                            </button>
+                            <button class="option-btn" data-score="6">
+                                <i class="ri-bar-chart-line"></i>
+                                <span>Basic budget in place</span>
+                            </button>
+                            <button class="option-btn" data-score="3">
+                                <i class="ri-draft-line"></i>
+                                <span>Informal estimates only</span>
+                            </button>
+                            <button class="option-btn" data-score="0">
+                                <i class="ri-bank-card-line"></i>
+                                <span>No budget/forecast</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scanner-result" style="display: none;">
+                    <div class="result-content">
+                        <div class="score-circle">
+                            <svg viewBox="0 0 100 100">
+                                <circle class="score-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="score-fill" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="283"></circle>
+                            </svg>
+                            <div class="score-value">
+                                <span class="number">0</span>
+                                <span class="max">/100</span>
+                            </div>
+                        </div>
+                        <h3 class="result-title">Your Financial Health Score</h3>
+                        <p class="result-description">Based on your answers, here's your assessment</p>
+                        <div class="result-breakdown">
+                            <div class="breakdown-item">
+                                <span class="label">Bookkeeping</span>
+                                <div class="mini-bar"><div class="fill" style="width: 0%"></div></div>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="label">Tax Compliance</span>
+                                <div class="mini-bar"><div class="fill" style="width: 0%"></div></div>
+                            </div>
+                            <div class="breakdown-item">
+                                <span class="label">Financial Planning</span>
+                                <div class="mini-bar"><div class="fill" style="width: 0%"></div></div>
+                            </div>
+                        </div>
+                        <div class="result-actions">
+                            <a href="pages/contact.html" class="btn btn-primary">
+                                <span>Get Professional Help</span>
+                                <i class="ri-arrow-right-line"></i>
+                            </a>
+                            <button class="btn btn-outline" onclick="resetScanner()">
+                                <i class="ri-refresh-line"></i>
+                                <span>Retake Assessment</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="scanner-nav">
+                    <button class="nav-btn prev" disabled>
+                        <i class="ri-arrow-left-line"></i>
+                        <span>Previous</span>
+                    </button>
+                    <button class="nav-btn next">
+                        <span>Next</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tax Savings Calculator -->
+    <section class="tax-calculator">
+        <div class="container">
+            <div class="calculator-grid">
+                <div class="calculator-content gs-reveal-left">
+                    <div class="section-badge">
+                        <i class="ri-calculator-line"></i>
+                        <span>Interactive Tool</span>
+                    </div>
+                    <h2 class="section-title">
+                        Calculate Your Potential <span class="gradient-text">Tax Savings</span>
+                    </h2>
+                    <p class="section-description">
+                        Discover how much you could save with proper tax planning and professional guidance
+                    </p>
+                    
+                    <form id="taxCalculatorForm" class="calculator-form">
+                        <div class="form-group">
+                            <label for="businessType">Business Type</label>
+                            <select id="businessType" required>
+                                <option value="">Select business type</option>
+                                <option value="sole">Sole Proprietorship</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="llc">LLC</option>
+                                <option value="corporation">Corporation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="annualRevenue">Annual Revenue ($)</label>
+                            <input type="number" id="annualRevenue" placeholder="e.g., 500000" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="expenses">Annual Expenses ($)</label>
+                            <input type="number" id="expenses" placeholder="e.g., 300000" min="0" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="currentTax">Current Tax Paid ($)</label>
+                            <input type="number" id="currentTax" placeholder="e.g., 50000" min="0" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full magnetic-btn">
+                            <i class="ri-calculator-line"></i>
+                            <span>Calculate Savings</span>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="calculator-result gs-reveal-right">
+                    <div class="result-card">
+                        <div class="result-header">
+                            <h3>Your Tax Optimization Report</h3>
+                            <i class="ri-trophy-line"></i>
+                        </div>
+                        
+                        <div class="result-body">
+                            <div class="savings-display">
+                                <div class="savings-label">Potential Annual Savings</div>
+                                <div class="savings-amount">$<span id="savingsValue">0</span></div>
+                                <div class="savings-percent"><span id="savingsPercent">0</span>% reduction</div>
+                            </div>
+                            
+                            <div class="breakdown-chart">
+                                <div class="chart-item">
+                                    <div class="chart-label">
+                                        <span>Current Tax</span>
+                                        <span id="currentTaxDisplay">$0</span>
+                                    </div>
+                                    <div class="chart-bar">
+                                        <div class="bar-fill current" style="width: 100%"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="chart-item">
+                                    <div class="chart-label">
+                                        <span>Optimized Tax</span>
+                                        <span id="optimizedTaxDisplay">$0</span>
+                                    </div>
+                                    <div class="chart-bar">
+                                        <div class="bar-fill optimized" style="width: 0%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="recommendations">
+                                <h4>Recommended Strategies:</h4>
+                                <ul id="recommendationsList">
+                                    <li><i class="ri-lightbulb-line"></i> Complete your assessment to see personalized recommendations</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="result-footer">
+                            <a href="pages/contact.html" class="btn btn-primary btn-sm">
+                                <span>Claim Your Savings</span>
+                                <i class="ri-arrow-right-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tax Deadline Tracker -->
+    <section class="deadline-tracker">
+        <div class="container">
+            <div class="tracker-header gs-reveal">
+                <div class="section-badge">
+                    <i class="ri-calendar-event-line"></i>
+                    <span>Live Updates</span>
+                </div>
+                <h2 class="section-title">
+                    Upcoming <span class="gradient-text">Tax Deadlines</span>
+                </h2>
+                <p class="section-description">
+                    Stay compliant with real-time deadline tracking and reminders
+                </p>
+            </div>
+            
+            <div class="tracker-grid">
+                <div class="deadline-card gs-reveal-up" data-deadline="2024-03-15">
+                    <div class="deadline-icon urgent">
+                        <i class="ri-alert-line"></i>
+                    </div>
+                    <div class="deadline-info">
+                        <h4>Corporate Tax Return</h4>
+                        <p>Form 1120 - C Corporations</p>
+                    </div>
+                    <div class="deadline-countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number minutes">00</span>
+                            <span class="countdown-label">Mins</span>
+                        </div>
+                    </div>
+                    <div class="deadline-status urgent">Urgent</div>
+                </div>
+                
+                <div class="deadline-card gs-reveal-up" data-deadline="2024-04-15">
+                    <div class="deadline-icon soon">
+                        <i class="ri-time-line"></i>
+                    </div>
+                    <div class="deadline-info">
+                        <h4>Individual Tax Return</h4>
+                        <p>Form 1040 - Personal Income Tax</p>
+                    </div>
+                    <div class="deadline-countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number minutes">00</span>
+                            <span class="countdown-label">Mins</span>
+                        </div>
+                    </div>
+                    <div class="deadline-status soon">Coming Soon</div>
+                </div>
+                
+                <div class="deadline-card gs-reveal-up" data-deadline="2024-04-30">
+                    <div class="deadline-icon moderate">
+                        <i class="ri-calendar-check-line"></i>
+                    </div>
+                    <div class="deadline-info">
+                        <h4>VAT Return Q1</h4>
+                        <p>Quarterly VAT Filing</p>
+                    </div>
+                    <div class="deadline-countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number minutes">00</span>
+                            <span class="countdown-label">Mins</span>
+                        </div>
+                    </div>
+                    <div class="deadline-status moderate">On Track</div>
+                </div>
+                
+                <div class="deadline-card gs-reveal-up" data-deadline="2024-06-15">
+                    <div class="deadline-icon future">
+                        <i class="ri-calendar-line"></i>
+                    </div>
+                    <div class="deadline-info">
+                        <h4>Estimated Tax Q2</h4>
+                        <p>Second Quarter Estimated Payment</p>
+                    </div>
+                    <div class="deadline-countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number minutes">00</span>
+                            <span class="countdown-label">Mins</span>
+                        </div>
+                    </div>
+                    <div class="deadline-status future">Future</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Assistant Modal -->
+    <div class="ai-modal-overlay" id="aiModalOverlay" style="display: none;">
+        <div class="ai-modal">
+            <div class="ai-modal-header">
+                <div class="ai-title">
+                    <i class="ri-sparkling-fill"></i>
+                    <span>Zen AI Assistant</span>
+                </div>
+                <button class="ai-close" id="aiCloseBtn">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            
+            <div class="ai-modal-body">
+                <div class="ai-chat-container" id="aiChatContainer">
+                    <div class="ai-welcome">
+                        <div class="ai-avatar">
+                            <i class="ri-sparkling-fill"></i>
+                        </div>
+                        <h3>Welcome! I'm Zen AI</h3>
+                        <p>Your intelligent accounting assistant. Ask me anything about taxes, bookkeeping, or financial planning!</p>
+                        <div class="ai-suggestions">
+                            <button class="suggestion-chip" data-query="What services do you offer?">
+                                <i class="ri-service-line"></i>
+                                <span>What services do you offer?</span>
+                            </button>
+                            <button class="suggestion-chip" data-query="When are tax returns due?">
+                                <i class="ri-calendar-line"></i>
+                                <span>When are tax returns due?</span>
+                            </button>
+                            <button class="suggestion-chip" data-query="How can I reduce my taxes?">
+                                <i class="ri-money-dollar-circle-line"></i>
+                                <span>How can I reduce my taxes?</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="ai-messages" id="aiMessages"></div>
+                </div>
+                
+                <div class="ai-input-container">
+                    <div class="api-key-notice" id="apiKeyNotice">
+                        <i class="ri-key-line"></i>
+                        <span>Enter your OpenRouter API key to start chatting (free models available)</span>
+                        <button class="btn-link" id="setApiKeyBtn">Set API Key</button>
+                    </div>
+                    <form class="ai-input-form" id="aiInputForm" style="display: none;">
+                        <input type="text" id="aiInput" placeholder="Ask me anything..." autocomplete="off">
+                        <button type="submit" class="ai-send-btn">
+                            <i class="ri-send-plane-fill"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- API Key Modal -->
+    <div class="api-modal-overlay" id="apiModalOverlay" style="display: none;">
+        <div class="api-modal">
+            <div class="api-modal-header">
+                <h3>Configure AI Assistant</h3>
+                <button class="api-close" id="apiCloseBtn">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+            <div class="api-modal-body">
+                <p class="api-description">
+                    Get your free API key from <a href="https://openrouter.ai" target="_blank">OpenRouter</a> to use our AI assistant. 
+                    They offer free tier access to models like Google Gemma 2 9B and Meta Llama 3 8B.
+                </p>
+                <form id="apiKeyForm" class="api-form">
+                    <div class="form-group">
+                        <label for="apiKeyInput">OpenRouter API Key</label>
+                        <input type="password" id="apiKeyInput" placeholder="sk-or-..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modelSelect">AI Model</label>
+                        <select id="modelSelect">
+                            <option value="google/gemma-2-9b-it:free">Google Gemma 2 9B (Free)</option>
+                            <option value="meta-llama/llama-3-8b-instruct:free">Meta Llama 3 8B (Free)</option>
+                            <option value="mistralai/mistral-7b-instruct:free">Mistral 7B (Free)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="ri-save-line"></i>
+                        <span>Save Configuration</span>
+                    </button>
+                </form>
+                <div class="api-security-note">
+                    <i class="ri-shield-keyhole-line"></i>
+                    <span>Your API key is stored locally in your browser and never sent to our servers.</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- CTA Section -->
     <section class="cta-section">
