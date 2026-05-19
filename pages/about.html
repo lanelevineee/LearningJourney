@@ -5,38 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Zen Accounting & Tax Consultancy</title>
     
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
     
-    <!-- Custom CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="logo-loader"><i class="ri-balance-line"></i></div>
+            <div class="loader-text">ZEN</div>
+            <div class="progress-bar"><div class="progress-fill"></div></div>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="../index.html" class="logo">
-                <img src="../images/logo.svg" alt="Zen Accounting Logo">
-                <span>Zen Accounting</span>
+                <img src="../images/logo.svg" alt="Zen Accounting Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="logo-fallback" style="display:none;"><i class="ri-balance-line"></i><span>ZEN</span></div>
             </a>
-            
             <ul class="nav-menu">
                 <li><a href="../index.html" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link active">About</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
-            
             <div class="nav-actions">
-                <a href="contact.html" class="btn btn-primary">Get Started</a>
-                <button class="mobile-toggle" aria-label="Toggle menu">
-                    <i class="ri-menu-line"></i>
-                </button>
+                <a href="contact.html" class="btn btn-primary"><span>Get Started</span><i class="ri-arrow-right-line"></i></a>
+                <button class="mobile-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
             </div>
         </div>
     </nav>
@@ -44,41 +49,44 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1 class="page-title">About <span class="gradient-text">Us</span></h1>
-            <p class="page-subtitle">Your trusted partner in financial success</p>
+            <h1 class="page-title gs-reveal">About <span class="gradient-text">Zen Accounting</span></h1>
+            <p class="page-description gs-reveal">Your trusted partner for professional accounting and tax services</p>
         </div>
     </section>
 
-    <!-- About Content Section -->
+    <!-- About Content -->
     <section class="about-full">
         <div class="container">
-            <div class="about-full-grid">
-                <div class="about-full-image">
-                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop" alt="Our team">
+            <div class="about-content-grid">
+                <div class="about-image gs-reveal-left">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Our Team">
                 </div>
-                
-                <div class="about-full-content">
-                    <div class="section-tag">Who We Are</div>
+                <div class="about-text gs-reveal-right">
+                    <div class="section-badge"><i class="ri-building-line"></i><span>Who We Are</span></div>
                     <h2 class="section-title">Welcome to <span class="gradient-text">Zen Accounting</span></h2>
-                    <p class="about-text">
-                        Welcome to Zen Accounting and Tax Consultancy — your trusted partner for professional 
-                        accounting, bookkeeping, and tax services. We are committed to helping businesses and 
-                        individuals maintain accurate financial records, stay compliant with tax regulations, 
-                        and make informed financial decisions.
-                    </p>
-                    <p class="about-text">
-                        Our goal is to simplify accounting and taxation for our clients by providing reliable, 
-                        timely, and professional financial support tailored to their needs. With years of 
-                        experience and a dedicated team of professionals, we deliver excellence in every service.
-                    </p>
+                    <p>Welcome to Zen Accounting and Tax Consultancy — your trusted partner for professional accounting, bookkeeping, and tax services. We are committed to helping businesses and individuals maintain accurate financial records, stay compliant with tax regulations, and make informed financial decisions.</p>
+                    <p>Our goal is to simplify accounting and taxation for our clients by providing reliable, timely, and professional financial support tailored to their needs.</p>
                     
-                    <div class="signature-section">
-                        <div class="signature-info">
-                            <strong>James Peterson</strong>
-                            <span>Managing Partner</span>
+                    <div class="values-grid">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="ri-shield-check-line"></i></div>
+                            <h4>Integrity</h4>
+                            <p>Honest and transparent in all dealings</p>
                         </div>
-                        <div class="signature">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/320px-Signature_sample.svg.png" alt="Signature">
+                        <div class="value-item">
+                            <div class="value-icon"><i class="ri-star-line"></i></div>
+                            <h4>Excellence</h4>
+                            <p>Committed to highest quality standards</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon"><i class="ri-user-smile-line"></i></div>
+                            <h4>Client-Focused</h4>
+                            <p>Your success is our priority</p>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon"><i class="ri-lightbulb-line"></i></div>
+                            <h4>Innovation</h4>
+                            <p>Embracing modern solutions</p>
                         </div>
                     </div>
                 </div>
@@ -86,212 +94,77 @@
         </div>
     </section>
 
-    <!-- Mission & Vision Section -->
-    <section class="mission-vision-section">
+    <!-- Mission & Vision -->
+    <section class="mission-vision">
         <div class="container">
             <div class="mv-grid">
-                <div class="mv-card-large">
-                    <div class="mv-icon-large">
-                        <i class="ri-target-line"></i>
-                    </div>
+                <div class="mv-card mission gs-reveal-up">
+                    <div class="card-icon"><i class="ri-target-line"></i></div>
                     <h3>Our Mission</h3>
-                    <p>To provide reliable, accurate, and professional accounting and tax solutions that help 
-                    businesses maintain financial clarity, meet regulatory obligations, and achieve sustainable 
-                    growth through exceptional service and integrity.</p>
+                    <p>To provide reliable, accurate, and professional accounting and tax solutions that help businesses maintain financial clarity, meet regulatory obligations, and achieve sustainable growth through exceptional service and integrity.</p>
                 </div>
-                
-                <div class="mv-card-large">
-                    <div class="mv-icon-large">
-                        <i class="ri-eye-line"></i>
-                    </div>
+                <div class="mv-card vision gs-reveal-up">
+                    <div class="card-icon"><i class="ri-eye-line"></i></div>
                     <h3>Our Vision</h3>
-                    <p>To become a leading and trusted accounting and tax consultancy recognized for excellence, 
-                    professionalism, and empowering businesses with sound financial management solutions.</p>
+                    <p>To become a leading and trusted accounting and tax consultancy recognized for excellence, professionalism, and empowering businesses with sound financial management solutions.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Core Values Section -->
-    <section class="values-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Core Values</div>
-                <h2 class="section-title">What <span class="gradient-text">Drives Us</span></h2>
-                <p class="section-description">
-                    Our core values define who we are and guide everything we do.
-                </p>
-            </div>
-            
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="ri-shield-check-line"></i>
-                    </div>
-                    <h4>Integrity</h4>
-                    <p>We uphold the highest ethical standards in all our dealings, ensuring transparency and honesty.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="ri-star-smile-line"></i>
-                    </div>
-                    <h4>Excellence</h4>
-                    <p>We strive for excellence in every service we deliver, exceeding client expectations consistently.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="ri-user-heart-line"></i>
-                    </div>
-                    <h4>Client-Focused</h4>
-                    <p>Our clients' success is our success. We tailor solutions to meet their unique needs.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="ri-team-line"></i>
-                    </div>
-                    <h4>Collaboration</h4>
-                    <p>We work closely with clients as partners, fostering long-term relationships built on trust.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="ri-lightbulb-line"></i>
-                    </div>
-                    <h4>Innovation</h4>
-                    <p>We embrace new technologies and methodologies to deliver efficient, modern solutions.</p>
-                </div>
-                
-                <div class="value-card">
-                    <div class="value-icon">
-                        <i class="ri-account-circle-line"></i>
-                    </div>
-                    <h4>Accountability</h4>
-                    <p>We take responsibility for our work and deliver on our promises with precision.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
+    <!-- Why Choose Us -->
     <section class="why-choose-page">
         <div class="container">
-            <div class="why-page-grid">
-                <div class="why-page-content">
-                    <div class="section-tag">Why Choose Us</div>
-                    <h2 class="section-title">The Zen <span class="gradient-text">Advantage</span></h2>
-                    <p class="section-description">
-                        We combine expertise, technology, and personalized service to deliver exceptional results.
-                    </p>
-                    
-                    <div class="why-list">
-                        <div class="why-item">
-                            <i class="ri-checkbox-circle-fill"></i>
-                            <div>
-                                <h4>Professional and Reliable Service</h4>
-                                <p>Expert guidance you can count on</p>
-                            </div>
-                        </div>
-                        
-                        <div class="why-item">
-                            <i class="ri-checkbox-circle-fill"></i>
-                            <div>
-                                <h4>Accurate Financial Reporting</h4>
-                                <p>Precision in every detail</p>
-                            </div>
-                        </div>
-                        
-                        <div class="why-item">
-                            <i class="ri-checkbox-circle-fill"></i>
-                            <div>
-                                <h4>Timely Tax Filing Support</h4>
-                                <p>Never miss a deadline</p>
-                            </div>
-                        </div>
-                        
-                        <div class="why-item">
-                            <i class="ri-checkbox-circle-fill"></i>
-                            <div>
-                                <h4>Confidential Handling</h4>
-                                <p>Your data is secure with us</p>
-                            </div>
-                        </div>
-                        
-                        <div class="why-item">
-                            <i class="ri-checkbox-circle-fill"></i>
-                            <div>
-                                <h4>Client-Focused Solutions</h4>
-                                <p>Tailored to your needs</p>
-                            </div>
-                        </div>
-                        
-                        <div class="why-item">
-                            <i class="ri-checkbox-circle-fill"></i>
-                            <div>
-                                <h4>Affordable and Efficient</h4>
-                                <p>Value for your investment</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="why-page-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=1000&fit=crop" alt="Team collaboration">
-                </div>
+            <div class="section-header gs-reveal">
+                <div class="section-badge"><i class="ri-star-line"></i><span>Why Choose Us</span></div>
+                <h2 class="section-title">The Zen <span class="gradient-text">Advantage</span></h2>
             </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-box">
-                    <div class="stat-number-large" data-count="15">0+</div>
-                    <div class="stat-label-large">Years Experience</div>
+            
+            <div class="features-grid-large">
+                <div class="feature-card gs-reveal-up">
+                    <div class="feature-icon-large"><i class="ri-user-smile-line"></i></div>
+                    <h4>Professional & Reliable</h4>
+                    <p>Consistent, high-quality service you can depend on for all your financial needs.</p>
                 </div>
-                
-                <div class="stat-box">
-                    <div class="stat-number-large" data-count="500">0+</div>
-                    <div class="stat-label-large">Happy Clients</div>
+                <div class="feature-card gs-reveal-up">
+                    <div class="feature-icon-large"><i class="ri-checkbox-circle-line"></i></div>
+                    <h4>Accurate Reporting</h4>
+                    <p>Precise financial data and reports for informed business decisions.</p>
                 </div>
-                
-                <div class="stat-box">
-                    <div class="stat-number-large" data-count="98">0%</div>
-                    <div class="stat-label-large">Success Rate</div>
+                <div class="feature-card gs-reveal-up">
+                    <div class="feature-icon-large"><i class="ri-time-zone-line"></i></div>
+                    <h4>Timely Support</h4>
+                    <p>On-time filing and responsive communication whenever you need us.</p>
                 </div>
-                
-                <div class="stat-box">
-                    <div class="stat-number-large" data-count="1000">0+</div>
-                    <div class="stat-label-large">Projects Completed</div>
+                <div class="feature-card gs-reveal-up">
+                    <div class="feature-icon-large"><i class="ri-lock-line"></i></div>
+                    <h4>Confidential & Secure</h4>
+                    <p>Your financial information is always protected with industry-leading security.</p>
+                </div>
+                <div class="feature-card gs-reveal-up">
+                    <div class="feature-icon-large"><i class="ri-hand-coin-line"></i></div>
+                    <h4>Affordable Services</h4>
+                    <p>Competitive pricing without compromising on quality or expertise.</p>
+                </div>
+                <div class="feature-card gs-reveal-up">
+                    <div class="feature-icon-large"><i class="ri-customer-service-2-line"></i></div>
+                    <h4>Client-Focused Solutions</h4>
+                    <p>Tailored approaches designed specifically for your unique business needs.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container cta-container">
-            <div class="cta-content">
-                <h2>Ready to Work With <span class="gradient-text-white">Us?</span></h2>
-                <p>Get started with a free consultation and discover how we can help your business thrive.</p>
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content gs-reveal">
+                <h2 class="cta-title">Ready to Transform Your <span class="gradient-text">Financial Future?</span></h2>
+                <p class="cta-description">Schedule a free consultation with our experts and discover how Zen Accounting can help your business thrive.</p>
                 <div class="cta-buttons">
-                    <a href="contact.html" class="btn btn-white btn-lg">
-                        Schedule Free Consultation
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                    <a href="tel:+1234567890" class="btn btn-outline-white btn-lg">
-                        <i class="ri-phone-line"></i>
-                        Call Us Now
-                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-lg"><span>Get Started Today</span><i class="ri-arrow-right-line"></i></a>
+                    <a href="tel:+1234567890" class="btn btn-outline-light btn-lg"><i class="ri-phone-line"></i><span>(123) 456-7890</span></a>
                 </div>
-            </div>
-            <div class="cta-decoration">
-                <div class="circle-1"></div>
-                <div class="circle-2"></div>
-                <div class="circle-3"></div>
             </div>
         </div>
     </section>
@@ -301,11 +174,11 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="../index.html" class="logo">
-                        <img src="../images/logo.svg" alt="Zen Accounting Logo">
-                        <span>Zen Accounting</span>
+                    <a href="../index.html" class="footer-logo">
+                        <img src="../images/logo.svg" alt="Zen Accounting" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="logo-fallback" style="display:none;"><i class="ri-balance-line"></i><span>ZEN</span></div>
                     </a>
-                    <p>Your trusted partner for professional accounting, bookkeeping, and tax services. Helping businesses achieve financial clarity and sustainable growth.</p>
+                    <p class="footer-description">Your trusted partner for professional accounting, bookkeeping, and tax services.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
                         <a href="#" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
@@ -314,328 +187,14 @@
                         <a href="#" aria-label="YouTube"><i class="ri-youtube-fill"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="services.html">Financial Statements</a></li>
-                        <li><a href="services.html">Audited Reports</a></li>
-                        <li><a href="services.html">Bookkeeping</a></li>
-                        <li><a href="services.html">Tax Preparation</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Contact Info</h4>
-                    <ul>
-                        <li>
-                            <i class="ri-map-pin-line"></i>
-                            <span>123 Business Street, Finance District<br>New York, NY 10001</span>
-                        </li>
-                        <li>
-                            <i class="ri-phone-line"></i>
-                            <span>+1 (234) 567-890</span>
-                        </li>
-                        <li>
-                            <i class="ri-mail-line"></i>
-                            <span>info@zenaccounting.com</span>
-                        </li>
-                        <li>
-                            <i class="ri-time-line"></i>
-                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
-                        </li>
-                    </ul>
-                </div>
+                <div class="footer-links"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-links"><h4>Services</h4><ul><li><a href="services.html">Financial Statements</a></li><li><a href="services.html">Bookkeeping</a></li><li><a href="services.html">Tax Preparation</a></li><li><a href="services.html">Payroll Services</a></li></ul></div>
+                <div class="footer-contact"><h4>Contact Info</h4><ul class="contact-list"><li><i class="ri-map-pin-line"></i><span>123 Business Ave, Suite 100<br>New York, NY 10001</span></li><li><i class="ri-phone-line"></i><span>(123) 456-7890</span></li><li><i class="ri-mail-line"></i><span>info@zenaccounting.com</span></li><li><i class="ri-time-line"></i><span>Mon-Fri: 9AM - 6PM</span></li></ul></div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 Zen Accounting & Tax Consultancy. All rights reserved.</p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2024 Zen Accounting and Tax Consultancy. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
         </div>
     </footer>
 
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <!-- Custom JS -->
     <script src="../js/main.js"></script>
-    
-    <!-- Page Specific Styles -->
-    <style>
-        .page-header {
-            padding: 160px 0 80px;
-            background: linear-gradient(135deg, var(--gray-50) 0%, rgba(241, 245, 249, 0.5) 100%);
-            text-align: center;
-        }
-        
-        .page-title {
-            font-size: clamp(42px, 6vw, 64px);
-            font-family: var(--font-secondary);
-            margin-bottom: 16px;
-        }
-        
-        .page-subtitle {
-            font-size: 18px;
-            color: var(--gray-500);
-        }
-        
-        .about-full {
-            padding: 100px 0;
-        }
-        
-        .about-full-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .about-full-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-2xl);
-        }
-        
-        .about-text {
-            font-size: 16px;
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 24px;
-        }
-        
-        .signature-section {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 1px solid var(--gray-200);
-        }
-        
-        .signature-info strong {
-            display: block;
-            font-size: 18px;
-            color: var(--gray-900);
-        }
-        
-        .signature-info span {
-            font-size: 14px;
-            color: var(--gray-500);
-        }
-        
-        .signature img {
-            height: 60px;
-            opacity: 0.6;
-        }
-        
-        .mission-vision-section {
-            padding: 100px 0;
-            background: var(--gray-50);
-        }
-        
-        .mv-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-        
-        .mv-card-large {
-            background: var(--white);
-            padding: 48px;
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .mv-icon-large {
-            width: 72px;
-            height: 72px;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-        
-        .mv-icon-large i {
-            font-size: 36px;
-            color: var(--white);
-        }
-        
-        .mv-card-large h3 {
-            font-size: 24px;
-            margin-bottom: 16px;
-        }
-        
-        .mv-card-large p {
-            color: var(--gray-600);
-            line-height: 1.8;
-        }
-        
-        .values-section {
-            padding: 100px 0;
-        }
-        
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-        
-        .value-card {
-            background: var(--gray-50);
-            padding: 40px 32px;
-            border-radius: var(--radius-xl);
-            transition: var(--transition-base);
-        }
-        
-        .value-card:hover {
-            background: var(--white);
-            box-shadow: var(--shadow-xl);
-            transform: translateY(-8px);
-        }
-        
-        .value-icon {
-            width: 64px;
-            height: 64px;
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            border-radius: var(--radius-lg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-        
-        .value-icon i {
-            font-size: 32px;
-            color: var(--white);
-        }
-        
-        .value-card h4 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-        
-        .value-card p {
-            color: var(--gray-600);
-            line-height: 1.7;
-        }
-        
-        .why-choose-page {
-            padding: 100px 0;
-            background: var(--gray-50);
-        }
-        
-        .why-page-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        
-        .why-list {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-            margin-top: 40px;
-        }
-        
-        .why-item {
-            display: flex;
-            gap: 16px;
-            align-items: flex-start;
-        }
-        
-        .why-item i {
-            font-size: 24px;
-            color: var(--primary-blue);
-            margin-top: 2px;
-        }
-        
-        .why-item h4 {
-            font-size: 18px;
-            margin-bottom: 4px;
-        }
-        
-        .why-item p {
-            font-size: 14px;
-            color: var(--gray-500);
-        }
-        
-        .why-page-image img {
-            width: 100%;
-            height: 700px;
-            object-fit: cover;
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-2xl);
-        }
-        
-        .stats-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-        }
-        
-        .stat-box {
-            text-align: center;
-            color: var(--white);
-        }
-        
-        .stat-number-large {
-            font-size: 56px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #ffffff 0%, #e0f2fe 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .stat-label-large {
-            font-size: 16px;
-            opacity: 0.9;
-        }
-        
-        @media (max-width: 1024px) {
-            .about-full-grid,
-            .mv-grid,
-            .why-page-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </body>
 </html>

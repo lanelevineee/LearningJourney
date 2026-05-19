@@ -1,49 +1,49 @@
-```
-# Logs and temp files
-*.log
-*.tmp
-*.swp
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Editors
-.vscode/
-.idea/
+```gitignore
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
 
 # Dependencies
 node_modules/
 venv/
 .venv/
-__pycache__/
-.mypy_cache/
-.pytest_cache/
+.env
+.env.local
+*.env.*
+
+# Build directories
 dist/
 build/
 target/
-.gradle/
+*.class
 
-# OS generated files
+# Caches
+.mypy_cache/
+.pytest_cache/
+.coverage
+coverage/
+htmlcov/
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
 .DS_Store
 Thumbs.db
 
-# Compiled files
-*.pyc
-*.class
-*.o
-*.exe
-*.dll
-*.so
-*.a
-*.obj
-*.out
-
-# Coverage
-coverage/
-htmlcov/
-.coverage
+# Logs and temp files
+*.log
+*.tmp
 
 # Compressed files
 *.zip
@@ -68,4 +68,13 @@ htmlcov/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
+
+# Gradle
+.gradle/
+
+# Julia
+julia-*/
+
+# Zig
+zig*/
 ```

@@ -5,24 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zen Accounting & Tax Consultancy | Professional Financial Services</title>
     
-    <!-- Remix Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS -->
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="logo-loader">
+                <i class="ri-balance-line"></i>
+            </div>
+            <div class="loader-text">ZEN</div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="images/logo.svg" alt="Zen Accounting Logo">
-                <span>Zen Accounting</span>
+                <img src="images/logo.svg" alt="Zen Accounting Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="logo-fallback" style="display:none;">
+                    <i class="ri-balance-line"></i>
+                    <span>ZEN</span>
+                </div>
             </a>
             
             <ul class="nav-menu">
@@ -33,9 +57,14 @@
             </ul>
             
             <div class="nav-actions">
-                <a href="pages/contact.html" class="btn btn-primary">Get Started</a>
+                <a href="pages/contact.html" class="btn btn-primary">
+                    <span>Get Started</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
                 <button class="mobile-toggle" aria-label="Toggle menu">
-                    <i class="ri-menu-line"></i>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
@@ -43,326 +72,390 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-bg-shape"></div>
+        <div class="hero-bg">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        
         <div class="container hero-container">
             <div class="hero-content">
-                <div class="hero-badge">
+                <div class="hero-badge gs-reveal">
                     <i class="ri-shield-check-line"></i>
                     <span>Trusted by 500+ Businesses</span>
                 </div>
-                <h1 class="hero-title">
-                    Expert Accounting & <br>
-                    <span class="gradient-text">Tax Solutions</span> for <br>
-                    Your Business Growth
+                
+                <h1 class="hero-title gs-reveal">
+                    Financial Clarity for 
+                    <span class="gradient-text">Sustainable Growth</span>
                 </h1>
-                <p class="hero-description">
-                    Professional accounting, bookkeeping, and tax services tailored to help businesses 
-                    maintain financial clarity, stay compliant, and achieve sustainable growth.
+                
+                <p class="hero-description gs-reveal">
+                    Professional accounting, bookkeeping, and tax services tailored to your business needs. 
+                    We simplify complexity so you can focus on what matters most.
                 </p>
-                <div class="hero-buttons">
+                
+                <div class="hero-cta gs-reveal">
                     <a href="pages/contact.html" class="btn btn-primary btn-lg">
-                        Free Consultation
+                        <span>Consult Now</span>
                         <i class="ri-arrow-right-line"></i>
                     </a>
-                    <a href="pages/services.html" class="btn btn-outline btn-lg">
-                        View Services
+                    <a href="#services" class="btn btn-outline btn-lg">
+                        <span>Our Services</span>
+                        <i class="ri-arrow-down-line"></i>
                     </a>
                 </div>
                 
-                <div class="hero-stats">
+                <div class="hero-stats gs-reveal">
                     <div class="stat-item">
-                        <div class="stat-number" data-count="15">0</div>
+                        <div class="stat-number" data-target="15">0</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number" data-count="500">0</div>
-                        <div class="stat-label">Happy Clients</div>
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="stat-label">Clients Served</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number" data-count="98">0</div>
-                        <div class="stat-label">% Success Rate</div>
+                        <div class="stat-number" data-target="98">0</div>
+                        <div class="stat-label">% Satisfaction</div>
                     </div>
                 </div>
             </div>
             
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=1000&fit=crop" alt="Professional accountant" class="hero-main-image">
-                    <div class="floating-card card-1">
-                        <i class="ri-file-chart-line"></i>
-                        <div>
-                            <strong>Financial Reports</strong>
-                            <span>Accurate & Timely</span>
-                        </div>
+            <div class="hero-visual gs-reveal">
+                <div class="visual-card card-1">
+                    <i class="ri-file-chart-line"></i>
+                    <span>Financial Reports</span>
+                </div>
+                <div class="visual-card card-2">
+                    <i class="ri-shield-check-line"></i>
+                    <span>Tax Compliance</span>
+                </div>
+                <div class="visual-card card-3">
+                    <i class="ri-account-box-line"></i>
+                    <span>Bookkeeping</span>
+                </div>
+                <div class="main-visual">
+                    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Professional Accounting" class="hero-image">
+                    <div class="floating-badge badge-1">
+                        <i class="ri-star-fill"></i>
+                        <span>Top Rated</span>
                     </div>
-                    <div class="floating-card card-2">
-                        <i class="ri-percent-line"></i>
-                        <div>
-                            <strong>Tax Compliance</strong>
-                            <span>100% Compliant</span>
-                        </div>
+                    <div class="floating-badge badge-2">
+                        <i class="ri-time-line"></i>
+                        <span>24/7 Support</span>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
     </section>
 
-    <!-- About Preview Section -->
-    <section class="about-preview">
-        <div class="container about-container">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop" alt="Team meeting">
-                <div class="experience-badge">
-                    <span class="years">15+</span>
-                    <span class="text">Years of Excellence</span>
+    <!-- About Preview -->
+    <section class="about-preview" id="about">
+        <div class="container">
+            <div class="section-header gs-reveal">
+                <div class="section-badge">
+                    <i class="ri-building-line"></i>
+                    <span>About Us</span>
                 </div>
-            </div>
-            
-            <div class="about-content">
-                <div class="section-tag">About Us</div>
-                <h2 class="section-title">Your Trusted Partner in <span class="gradient-text">Financial Success</span></h2>
+                <h2 class="section-title">
+                    Your Partner in 
+                    <span class="gradient-text">Financial Excellence</span>
+                </h2>
                 <p class="section-description">
                     Welcome to Zen Accounting and Tax Consultancy — your trusted partner for professional 
-                    accounting, bookkeeping, and tax services. We are committed to helping businesses and 
-                    individuals maintain accurate financial records, stay compliant with tax regulations, 
-                    and make informed financial decisions.
+                    accounting, bookkeeping, and tax services.
                 </p>
-                
-                <div class="mission-vision">
-                    <div class="mv-card">
-                        <div class="mv-icon">
-                            <i class="ri-target-line"></i>
-                        </div>
-                        <h3>Our Mission</h3>
-                        <p>To provide reliable, accurate, and professional accounting and tax solutions that help businesses maintain financial clarity.</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-card mission gs-reveal-left">
+                    <div class="card-icon">
+                        <i class="ri-target-line"></i>
                     </div>
-                    <div class="mv-card">
-                        <div class="mv-icon">
-                            <i class="ri-eye-line"></i>
-                        </div>
-                        <h3>Our Vision</h3>
-                        <p>To become a leading and trusted accounting consultancy recognized for excellence and professionalism.</p>
-                    </div>
+                    <h3>Mission</h3>
+                    <p>To provide reliable, accurate, and professional accounting and tax solutions that help businesses maintain financial clarity, meet regulatory obligations, and achieve sustainable growth.</p>
                 </div>
                 
-                <a href="pages/about.html" class="btn btn-primary">
-                    Learn More About Us
-                    <i class="ri-arrow-right-line"></i>
-                </a>
+                <div class="about-card vision gs-reveal-right">
+                    <div class="card-icon">
+                        <i class="ri-eye-line"></i>
+                    </div>
+                    <h3>Vision</h3>
+                    <p>To become a leading and trusted accounting and tax consultancy recognized for excellence, professionalism, and empowering businesses with sound financial management solutions.</p>
+                </div>
+                
+                <div class="about-story gs-reveal-up">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team Meeting" class="story-image">
+                    <div class="story-content">
+                        <h3>Our Commitment</h3>
+                        <p>We are committed to helping businesses and individuals maintain accurate financial records, stay compliant with tax regulations, and make informed financial decisions. Our goal is to simplify accounting and taxation for our clients.</p>
+                        <a href="pages/about.html" class="link-arrow">
+                            <span>Learn More About Us</span>
+                            <i class="ri-arrow-right-line"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="services">
+    <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Our Services</div>
-                <h2 class="section-title">Comprehensive Financial <span class="gradient-text">Solutions</span></h2>
+            <div class="section-header gs-reveal">
+                <div class="section-badge">
+                    <i class="ri-service-line"></i>
+                    <span>Our Services</span>
+                </div>
+                <h2 class="section-title">
+                    Comprehensive 
+                    <span class="gradient-text">Financial Solutions</span>
+                </h2>
                 <p class="section-description">
-                    We offer a complete range of accounting and tax services designed to meet 
-                    the unique needs of your business.
+                    Tailored accounting and tax services designed to meet your unique business needs
                 </p>
             </div>
             
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card gs-reveal-up">
                     <div class="service-icon">
-                        <i class="ri-file-list-3-line"></i>
+                        <i class="ri-file-list-line"></i>
                     </div>
                     <h3>Non-Audited Financial Statements</h3>
-                    <p>Professional financial statements for businesses that don't require statutory audits. Perfect for decision-making and loan applications.</p>
+                    <p>Professional financial statements for businesses that don't require statutory audits. Perfect for decision-making and internal management.</p>
                     <ul class="service-features">
                         <li><i class="ri-check-line"></i> Income Statement</li>
                         <li><i class="ri-check-line"></i> Financial Position</li>
                         <li><i class="ri-check-line"></i> Cash Flow Statement</li>
                     </ul>
                     <a href="pages/services.html" class="service-link">
-                        Learn More
+                        <span>Learn More</span>
                         <i class="ri-arrow-right-line"></i>
                     </a>
                 </div>
                 
-                <div class="service-card featured">
-                    <div class="service-badge">Most Popular</div>
+                <div class="service-card featured gs-reveal-up">
+                    <div class="featured-badge">Most Popular</div>
                     <div class="service-icon">
-                        <i class="ri-file-search-line"></i>
+                        <i class="ri-search-eye-line"></i>
                     </div>
                     <h3>Audited Financial Statements</h3>
-                    <p>Financial statements ready for independent audit examination in accordance with accounting standards.</p>
+                    <p>Financial statements prepared for independent audit examination in accordance with accounting standards.</p>
                     <ul class="service-features">
                         <li><i class="ri-check-line"></i> Improved Credibility</li>
                         <li><i class="ri-check-line"></i> Regulatory Compliance</li>
                         <li><i class="ri-check-line"></i> Investor Confidence</li>
                     </ul>
                     <a href="pages/services.html" class="service-link">
-                        Learn More
+                        <span>Learn More</span>
                         <i class="ri-arrow-right-line"></i>
                     </a>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card gs-reveal-up">
                     <div class="service-icon">
                         <i class="ri-book-open-line"></i>
                     </div>
                     <h3>Bookkeeping Services</h3>
-                    <p>Maintain accurate and organized financial records with daily transaction recording and efficient management.</p>
+                    <p>Accurate and organized financial records with daily transaction recording and efficient account management.</p>
                     <ul class="service-features">
                         <li><i class="ri-check-line"></i> Sales & Purchase Recording</li>
                         <li><i class="ri-check-line"></i> Bank Reconciliation</li>
                         <li><i class="ri-check-line"></i> Payroll Support</li>
                     </ul>
                     <a href="pages/services.html" class="service-link">
-                        Learn More
+                        <span>Learn More</span>
                         <i class="ri-arrow-right-line"></i>
                     </a>
                 </div>
                 
-                <div class="service-card">
+                <div class="service-card gs-reveal-up">
                     <div class="service-icon">
                         <i class="ri-calculator-line"></i>
                     </div>
                     <h3>Tax Preparation & Filing</h3>
-                    <p>Accurate and timely tax return preparation and filing while ensuring full compliance with tax laws.</p>
+                    <p>Accurate and timely tax return preparation ensuring full compliance with tax laws and regulations.</p>
                     <ul class="service-features">
                         <li><i class="ri-check-line"></i> VAT Returns</li>
                         <li><i class="ri-check-line"></i> Income Tax Returns</li>
                         <li><i class="ri-check-line"></i> PAYE Filing</li>
                     </ul>
                     <a href="pages/services.html" class="service-link">
-                        Learn More
+                        <span>Learn More</span>
                         <i class="ri-arrow-right-line"></i>
                     </a>
                 </div>
             </div>
+            
+            <div class="services-cta gs-reveal">
+                <a href="pages/services.html" class="btn btn-primary btn-lg">
+                    <span>View All Services</span>
+                    <i class="ri-arrow-right-line"></i>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Why Choose Us Section -->
+    <!-- Why Choose Us -->
     <section class="why-choose">
-        <div class="container why-container">
-            <div class="why-content">
-                <div class="section-tag">Why Choose Us</div>
-                <h2 class="section-title">The Zen Accounting <span class="gradient-text">Advantage</span></h2>
-                <p class="section-description">
-                    We combine expertise, technology, and personalized service to deliver 
-                    exceptional results for every client.
-                </p>
+        <div class="container">
+            <div class="why-grid">
+                <div class="why-content gs-reveal-left">
+                    <div class="section-badge">
+                        <i class="ri-star-line"></i>
+                        <span>Why Choose Us</span>
+                    </div>
+                    <h2 class="section-title">
+                        The Zen 
+                        <span class="gradient-text">Advantage</span>
+                    </h2>
+                    <p class="section-description">
+                        We combine expertise, technology, and personalized service to deliver exceptional results for every client.
+                    </p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="ri-user-smile-line"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Professional & Reliable</h4>
+                                <p>Consistent, high-quality service you can depend on</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="ri-checkbox-circle-line"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Accurate Reporting</h4>
+                                <p>Precise financial data for informed decisions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="ri-time-zone-line"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Timely Support</h4>
+                                <p>On-time filing and responsive communication</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="ri-lock-line"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Confidential & Secure</h4>
+                                <p>Your financial information is always protected</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="features-grid">
-                    <div class="feature-item">
-                        <i class="ri-user-star-line"></i>
-                        <h4>Professional Service</h4>
-                        <p>Reliable and expert guidance</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="ri-checkbox-circle-line"></i>
-                        <h4>Accurate Reporting</h4>
-                        <p>Precision in every detail</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="ri-time-line"></i>
-                        <h4>Timely Support</h4>
-                        <p>Always on schedule</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="ri-lock-line"></i>
-                        <h4>Confidential</h4>
-                        <p>Your data is secure</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="ri-customer-service-2-line"></i>
-                        <h4>Client-Focused</h4>
-                        <p>Tailored solutions</p>
-                    </div>
-                    <div class="feature-item">
-                        <i class="ri-wallet-3-line"></i>
-                        <h4>Affordable</h4>
-                        <p>Efficient pricing</p>
+                <div class="why-visual gs-reveal-right">
+                    <div class="visual-stack">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Professional Team" class="stack-img img-1">
+                        <img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Office Environment" class="stack-img img-2">
+                        <div class="stack-badge">
+                            <div class="badge-number">15+</div>
+                            <div class="badge-text">Years of Excellence</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="why-image">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=1000&fit=crop" alt="Team collaboration">
-                <div class="pattern-overlay"></div>
-            </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials -->
     <section class="testimonials">
         <div class="container">
-            <div class="section-header">
-                <div class="section-tag">Testimonials</div>
-                <h2 class="section-title">What Our <span class="gradient-text">Clients Say</span></h2>
-                <p class="section-description">
-                    Don't just take our word for it. Hear from businesses we've helped succeed.
-                </p>
+            <div class="section-header gs-reveal">
+                <div class="section-badge">
+                    <i class="ri-chat-quote-line"></i>
+                    <span>Testimonials</span>
+                </div>
+                <h2 class="section-title">
+                    What Our 
+                    <span class="gradient-text">Clients Say</span>
+                </h2>
             </div>
             
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"Zen Accounting transformed our financial management. Their attention to detail and proactive approach saved us thousands in taxes."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client">
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <span>CEO, TechStart Inc.</span>
+                            </div>
+                        </div>
                     </div>
-                    <p class="testimonial-text">
-                        "Zen Accounting transformed our financial management. Their attention to detail 
-                        and proactive approach saved us thousands in tax liabilities. Highly recommended!"
-                    </p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Client">
-                        <div>
-                            <strong>Michael Chen</strong>
-                            <span>CEO, TechStart Inc.</span>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"Professional, reliable, and incredibly knowledgeable. They handle all our bookkeeping and tax filings with absolute precision."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span>Founder, GreenLeaf Co.</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"The team at Zen made our audit process seamless. Their preparation was thorough and their guidance invaluable throughout."</p>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Client">
+                            <div class="author-info">
+                                <h4>David Rodriguez</h4>
+                                <span>CFO, BuildRight Ltd.</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "Professional, reliable, and always available. They handle our bookkeeping and 
-                        tax filings seamlessly, giving us peace of mind to focus on growing our business."
-                    </p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Client">
-                        <div>
-                            <strong>Sarah Johnson</strong>
-                            <span>Founder, GreenLeaf Co.</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                        <i class="ri-star-fill"></i>
-                    </div>
-                    <p class="testimonial-text">
-                        "The team at Zen Accounting is exceptional. They prepared our audited statements 
-                        efficiently and helped us secure funding from investors. True professionals!"
-                    </p>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Client">
-                        <div>
-                            <strong>David Martinez</strong>
-                            <span>Director, BuildRight Ltd.</span>
-                        </div>
-                    </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" aria-label="Previous">
+                        <i class="ri-arrow-left-line"></i>
+                    </button>
+                    <button class="slider-btn next" aria-label="Next">
+                        <i class="ri-arrow-right-line"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -371,62 +464,65 @@
     <!-- FAQ Section -->
     <section class="faq">
         <div class="container">
-            <div class="section-header">
-                <div class="section-tag">FAQ</div>
-                <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
-                <p class="section-description">
-                    Get quick answers to common questions about our services.
-                </p>
+            <div class="section-header gs-reveal">
+                <div class="section-badge">
+                    <i class="ri-question-line"></i>
+                    <span>FAQ</span>
+                </div>
+                <h2 class="section-title">
+                    Common 
+                    <span class="gradient-text">Questions</span>
+                </h2>
             </div>
             
-            <div class="faq-container">
-                <div class="faq-item">
+            <div class="faq-grid">
+                <div class="faq-item gs-reveal-up">
                     <button class="faq-question">
                         <span>What services do you offer?</span>
                         <i class="ri-add-line"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>We offer comprehensive accounting services including non-audited and audited financial statement preparation, bookkeeping, payroll support, and tax preparation and filing for both individuals and businesses.</p>
+                        <p>We offer comprehensive accounting services including non-audited and audited financial statement preparation, bookkeeping, payroll support, and complete tax preparation and filing services for both individuals and businesses.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
+                <div class="faq-item gs-reveal-up">
                     <button class="faq-question">
-                        <span>How often should I update my books?</span>
+                        <span>How do you ensure data security?</span>
                         <i class="ri-add-line"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>We recommend updating your books at least monthly to maintain accurate financial records. However, the frequency may vary depending on your business size and transaction volume. We can help determine the best schedule for your needs.</p>
+                        <p>We implement industry-leading security measures including encrypted data transmission, secure cloud storage, regular backups, and strict access controls to protect your confidential financial information.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
+                <div class="faq-item gs-reveal-up">
                     <button class="faq-question">
-                        <span>When is the best time to start working with an accountant?</span>
+                        <span>What industries do you serve?</span>
                         <i class="ri-add-line"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>The best time is now! Whether you're starting a new business or looking to improve your current financial management, early involvement helps prevent issues and ensures proper setup from the beginning.</p>
+                        <p>We work with businesses across various industries including technology, retail, healthcare, real estate, manufacturing, and professional services. Our team has diverse expertise to handle industry-specific requirements.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
+                <div class="faq-item gs-reveal-up">
                     <button class="faq-question">
-                        <span>Do you work with small businesses?</span>
+                        <span>How often will we communicate?</span>
                         <i class="ri-add-line"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Absolutely! We specialize in helping small and medium-sized businesses. Our services are scalable and tailored to fit businesses of all sizes and industries.</p>
+                        <p>Communication frequency depends on your needs. We offer monthly check-ins, quarterly reviews, and are always available for urgent matters. Many clients appreciate our proactive approach to keeping them informed.</p>
                     </div>
                 </div>
                 
-                <div class="faq-item">
+                <div class="faq-item gs-reveal-up">
                     <button class="faq-question">
-                        <span>How do you ensure data security and confidentiality?</span>
+                        <span>What makes Zen different from other firms?</span>
                         <i class="ri-add-line"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>We implement strict confidentiality protocols, secure data storage systems, and limited access controls. Your financial information is treated with the highest level of security and privacy.</p>
+                        <p>Our combination of deep expertise, personalized service, cutting-edge technology, and commitment to client success sets us apart. We don't just handle your numbers—we become your strategic financial partner.</p>
                     </div>
                 </div>
             </div>
@@ -434,26 +530,26 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
-        <div class="container cta-container">
-            <div class="cta-content">
-                <h2>Ready to Simplify Your <span class="gradient-text-white">Financial Management?</span></h2>
-                <p>Get started with a free consultation and discover how we can help your business thrive.</p>
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content gs-reveal">
+                <h2 class="cta-title">
+                    Ready to Transform Your 
+                    <span class="gradient-text">Financial Future?</span>
+                </h2>
+                <p class="cta-description">
+                    Schedule a free consultation with our experts and discover how Zen Accounting can help your business thrive.
+                </p>
                 <div class="cta-buttons">
-                    <a href="pages/contact.html" class="btn btn-white btn-lg">
-                        Schedule Free Consultation
+                    <a href="pages/contact.html" class="btn btn-primary btn-lg">
+                        <span>Get Started Today</span>
                         <i class="ri-arrow-right-line"></i>
                     </a>
-                    <a href="tel:+1234567890" class="btn btn-outline-white btn-lg">
+                    <a href="tel:+1234567890" class="btn btn-outline-light btn-lg">
                         <i class="ri-phone-line"></i>
-                        Call Us Now
+                        <span>(123) 456-7890</span>
                     </a>
                 </div>
-            </div>
-            <div class="cta-decoration">
-                <div class="circle-1"></div>
-                <div class="circle-2"></div>
-                <div class="circle-3"></div>
             </div>
         </div>
     </section>
@@ -463,11 +559,17 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo.svg" alt="Zen Accounting Logo">
-                        <span>Zen Accounting</span>
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.svg" alt="Zen Accounting" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                        <div class="logo-fallback" style="display:none;">
+                            <i class="ri-balance-line"></i>
+                            <span>ZEN</span>
+                        </div>
                     </a>
-                    <p>Your trusted partner for professional accounting, bookkeeping, and tax services. Helping businesses achieve financial clarity and sustainable growth.</p>
+                    <p class="footer-description">
+                        Your trusted partner for professional accounting, bookkeeping, and tax services. 
+                        Helping businesses achieve financial clarity and sustainable growth.
+                    </p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="ri-facebook-circle-fill"></i></a>
                         <a href="#" aria-label="Twitter"><i class="ri-twitter-x-fill"></i></a>
@@ -491,22 +593,22 @@
                     <h4>Services</h4>
                     <ul>
                         <li><a href="pages/services.html">Financial Statements</a></li>
-                        <li><a href="pages/services.html">Audited Reports</a></li>
                         <li><a href="pages/services.html">Bookkeeping</a></li>
                         <li><a href="pages/services.html">Tax Preparation</a></li>
+                        <li><a href="pages/services.html">Payroll Services</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-contact">
                     <h4>Contact Info</h4>
-                    <ul>
+                    <ul class="contact-list">
                         <li>
                             <i class="ri-map-pin-line"></i>
-                            <span>123 Business Street, Finance District<br>New York, NY 10001</span>
+                            <span>123 Business Ave, Suite 100<br>New York, NY 10001</span>
                         </li>
                         <li>
                             <i class="ri-phone-line"></i>
-                            <span>+1 (234) 567-890</span>
+                            <span>(123) 456-7890</span>
                         </li>
                         <li>
                             <i class="ri-mail-line"></i>
@@ -514,14 +616,14 @@
                         </li>
                         <li>
                             <i class="ri-time-line"></i>
-                            <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                            <span>Mon-Fri: 9AM - 6PM<br>Sat: 10AM - 2PM</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Zen Accounting & Tax Consultancy. All rights reserved.</p>
+                <p>&copy; 2024 Zen Accounting and Tax Consultancy. All rights reserved.</p>
                 <div class="footer-legal">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -530,11 +632,6 @@
         </div>
     </footer>
 
-    <!-- GSAP & ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
-    <!-- Custom JS -->
     <script src="js/main.js"></script>
 </body>
 </html>
